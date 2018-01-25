@@ -25,13 +25,12 @@ publish {
     publishVersion = '0.0.1'
     desc = 'Android library for phone number verification feature in your app. Automatically copies verification code from SMS right into the app.'
     licences = ['Apache-2.0']
-    uploadName='android-sms-verifier'
+    repoName ='android-sms-verifier'
     website = 'https://github.com/AndroidStudyOpenSource/android-sms-verifier'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     implementation 'com.android.support:appcompat-v7:27.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
