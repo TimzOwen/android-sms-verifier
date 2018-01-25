@@ -33,3 +33,56 @@ If you are using this Library, this means your Application might be using Intern
 Also, for android M and above, you must request the runtime permission.
 
 That's it, you have set up the required permissions and ready to go!
+
+## Quick Example
+
+Initialize SmsVerifyCatcher in method like onCreate activity:
+
+```
+  //Initialize the SmsVerifyCatcher
+        smsVerifyCatcher = new SmsVerifyCatcher(this, new OnSmsCatchListener<String>() {
+            @Override
+            public void onSmsCatch(String message) {
+                String code = parseCode(message);//Parse verification code
+                etCode.setText(code);//set code in edit text
+
+                //TODO Send the Verification Code to the Server
+            }
+        });
+```
+
+Override activity lifecicle methods:
+
+```
+ @Override
+    protected void onStart() {
+        super.onStart();
+        smsVerifyCatcher.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        smsVerifyCatcher.onStop();
+    }
+
+    /**
+     * need for Android 6 real time permissions
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        smsVerifyCatcher.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+```
+
+You can set phone number filter:
+
+```
+smsVerifyCatcher.setPhoneNumberFilter("2547");
+```
+Take a look at this sample project which has a sample implementation of the library.
+
+## Contributing and Issues
+
+Please feel free to contribute or open issues, if any and I will be happy to help out!
