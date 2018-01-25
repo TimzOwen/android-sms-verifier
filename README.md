@@ -38,7 +38,7 @@ That's it, you have set up the required permissions and ready to go!
 
 Initialize SmsVerifyCatcher in method like onCreate activity:
 
-```
+```java
   //Initialize the SmsVerifyCatcher
         smsVerifyCatcher = new SmsVerifyCatcher(this, new OnSmsCatchListener<String>() {
             @Override
@@ -53,7 +53,7 @@ Initialize SmsVerifyCatcher in method like onCreate activity:
 
 Override activity lifecicle methods:
 
-```
+```java
  @Override
     protected void onStart() {
         super.onStart();
