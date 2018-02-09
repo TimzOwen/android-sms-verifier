@@ -86,3 +86,7 @@ Take a look at this sample project which has a sample implementation of the libr
 ## Contributing and Issues
 
 Please feel free to contribute or open issues, if any and I will be happy to help out!
+
+## License
+
+This project is licensed under the MIT License.
